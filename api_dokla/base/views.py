@@ -17,7 +17,7 @@ def endpoints(request):
 
 
 
-# @api_view(['GET','POST'])
+@api_view(['GET','POST'])
 @permission_classes([IsAuthenticated])
 def advocates_list(request):
     if request.method == 'GET':
@@ -61,7 +61,7 @@ class advocate(APIView):
         self.datas(username).delete()
         return Response(f'user {username} was deleted')
 
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 @api_view(['GET','POST'])
 def companies(request):
     if request.method == 'GET':
@@ -85,7 +85,7 @@ def companies(request):
     return Response('dafa')
 
 
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 @api_view(['GET','PUT','DELETE'])
 def company(request,name):
     try:
